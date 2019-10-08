@@ -9,6 +9,8 @@ package tictactoe.bll;
  *
  * @author Stegger
  */
+/*The class GameBoard hold all the logic for the game. 
+It manipulates variables and sends inputs to the GUI controler to display the game*/
 public class GameBoard implements IGameModel
 {
     boolean draw = false;
@@ -71,109 +73,96 @@ public class GameBoard implements IGameModel
         
         int full = 0;
         
-        //Check column
-       
-         /*for(int i = 0; i < 3; i++){
-             for(int j = 0; j < 3; j++){
-                 if(krydsOgBolle[i][j] == null)
-                  break;
-                 if(j == 3-1)
-                 {
-                     return true;
-                 }
-             }
-        
-        
-        */   
-        
          //Check for player 0 columns
-        for(int i = 0; i < 3; i++){
-          if(krydsOgBolle[i][0] != 0 && krydsOgBolle[i][1] != 0 && krydsOgBolle[i][2] != 0){
-              
-           if(krydsOgBolle[i][0] == 1 && krydsOgBolle[i][1] == 1 && krydsOgBolle[i][2] == 1){
-               
-               winner = 0;
-               return true;
-           
-           }
-            
+        for(int i = 0; i < 3; i++)
+        {
+            if(krydsOgBolle[i][0] != 0 && krydsOgBolle[i][1] != 0 && krydsOgBolle[i][2] != 0)
+            {
+                if(krydsOgBolle[i][0] == 1 && krydsOgBolle[i][1] == 1 && krydsOgBolle[i][2] == 1)
+                {
+                    winner = 0;
+                    return true;
+                }
+            }
         }
-        }
+        
         //Check for player 0 rows
-        for(int i = 0; i < 3; i++){
-          if(krydsOgBolle[0][i] != 0 && krydsOgBolle[1][i] != 0 && krydsOgBolle[2][i] != 0){
-              
-           if(krydsOgBolle[0][i] == 1 && krydsOgBolle[1][i] == 1 && krydsOgBolle[2][i] == 1){
-               
-               winner = 0;
-               return true;
-           }
-        }
+        for(int i = 0; i < 3; i++)
+        {
+            if(krydsOgBolle[0][i] != 0 && krydsOgBolle[1][i] != 0 && krydsOgBolle[2][i] != 0)
+            {   
+                if(krydsOgBolle[0][i] == 1 && krydsOgBolle[1][i] == 1 && krydsOgBolle[2][i] == 1)
+                {
+                    winner = 0;
+                    return true;
+                }
+            }
         }
         
         //Check for player 0 diag
-        if(krydsOgBolle[0][0] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][2] != 0){
-              
-           if(krydsOgBolle[0][0] == 1 && krydsOgBolle[1][1] == 1 && krydsOgBolle[2][2] == 1){
-               
-               winner = 0;
-               return true;
-           }
+        if(krydsOgBolle[0][0] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][2] != 0)
+        {
+            if(krydsOgBolle[0][0] == 1 && krydsOgBolle[1][1] == 1 && krydsOgBolle[2][2] == 1)
+            {
+                winner = 0;
+                return true;
+            }
         }
         
         //check for player 0 antiDiag
-        if(krydsOgBolle[0][2] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][0] != 0){
-              
-           if(krydsOgBolle[0][2] == 1 && krydsOgBolle[1][1] == 1 && krydsOgBolle[2][0] == 1){
-               
-               winner = 0;
-               return true;
-           }
+        if(krydsOgBolle[0][2] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][0] != 0)
+        {
+            if(krydsOgBolle[0][2] == 1 && krydsOgBolle[1][1] == 1 && krydsOgBolle[2][0] == 1)
+            {
+                winner = 0;
+                return true;
+            }
         }
         
         //Check for player 1 columns
-        for(int i = 0; i < 3; i++){
-          if(krydsOgBolle[i][0] != 0 && krydsOgBolle[i][1] != 0 && krydsOgBolle[i][2] != 0){
-              
-           if(krydsOgBolle[i][0] == 2 && krydsOgBolle[i][1] == 2 && krydsOgBolle[i][2] == 2){
-               
-               winner = 1;
-               return true;
-           
-           }
-            
+        for(int i = 0; i < 3; i++)
+        {
+            if(krydsOgBolle[i][0] != 0 && krydsOgBolle[i][1] != 0 && krydsOgBolle[i][2] != 0)
+            {
+                if(krydsOgBolle[i][0] == 2 && krydsOgBolle[i][1] == 2 && krydsOgBolle[i][2] == 2)
+                {
+                    winner = 1;
+                    return true;
+                }     
+            } 
         }
-        }
+        
         //Check for player 1 rows
-        for(int i = 0; i < 3; i++){
-          if(krydsOgBolle[0][i] != 0 && krydsOgBolle[1][i] != 0 && krydsOgBolle[2][i] != 0){
-              
-           if(krydsOgBolle[0][i] == 2 && krydsOgBolle[1][i] == 2 && krydsOgBolle[2][i] == 2){
-               
-               winner = 1;
-               return true;
-           }
-        }
+        for(int i = 0; i < 3; i++)
+        {
+            if(krydsOgBolle[0][i] != 0 && krydsOgBolle[1][i] != 0 && krydsOgBolle[2][i] != 0)
+            {
+                if(krydsOgBolle[0][i] == 2 && krydsOgBolle[1][i] == 2 && krydsOgBolle[2][i] == 2)
+                {
+                    winner = 1;
+                    return true;
+                }
+            }
         }
         
         //Check for player 1 diag
-        if(krydsOgBolle[0][0] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][2] != 0){
-              
-           if(krydsOgBolle[0][0] == 2 && krydsOgBolle[1][1] == 2 && krydsOgBolle[2][2] == 2){
-               
-               winner = 1;
-               return true;
-           }
+        if(krydsOgBolle[0][0] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][2] != 0)
+        {
+            if(krydsOgBolle[0][0] == 2 && krydsOgBolle[1][1] == 2 && krydsOgBolle[2][2] == 2)
+            {
+                winner = 1;
+                return true;
+            }
         }
         
         //check for player 1 antiDiag
-        if(krydsOgBolle[0][2] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][0] != 0){
-              
-           if(krydsOgBolle[0][2] == 2 && krydsOgBolle[1][1] == 2 && krydsOgBolle[2][0] == 2){
-               
-               winner = 1;
-               return true;
-           }
+        if(krydsOgBolle[0][2] != 0 && krydsOgBolle[1][1] != 0 && krydsOgBolle[2][0] != 0)
+        {
+            if(krydsOgBolle[0][2] == 2 && krydsOgBolle[1][1] == 2 && krydsOgBolle[2][0] == 2)
+            {
+                winner = 1;
+                return true;
+            }
         }
       
         
@@ -182,21 +171,20 @@ public class GameBoard implements IGameModel
         for (int i = 0; i<krydsOgBolle.length;i++)
         {
             for (int j = 0; j<krydsOgBolle.length;j++)
-             {
-                if( krydsOgBolle[i][j] != 0){
-                    
+            {
+                if( krydsOgBolle[i][j] != 0)
+                {
                     full++;
-             }
-             }
+                }
+            }
         }
-        if(full >= 9){
-        draw = true; 
-        return true; 
         
+        if(full >= 9)
+        {
+            draw = true; 
+            return true; 
         }
         return false;
-        
-        
     }
 
     /**
@@ -206,28 +194,24 @@ public class GameBoard implements IGameModel
      */
     public int getWinner()
     {
-        if(draw){
+        if(draw)
+        {
             draw = false;
             return player = -1;
-        
         }
-        /*return currentPlayer = (lastSymbol == 'x') ? 1 : 0;*/
         return winner;
     }
-public void newGame()
+    
+    public void newGame()
     {
         for (int i = 0; i<krydsOgBolle.length;i++)
         {
             for (int j = 0; j<krydsOgBolle.length;j++)
-             {
-                 krydsOgBolle[i][j]= 0;
-                 player = 0;
-             }
+            {
+                krydsOgBolle[i][j]= 0;
+                player = 0;
+            }
         }
-       
-        
     }
-
-
-  }
+}
 
