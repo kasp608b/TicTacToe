@@ -67,7 +67,12 @@ public class GameBoard implements IGameModel
             return false;
         }   
     }
-
+    /**
+     * checks the different win conditions of the game and if either player has
+     * completed one
+     *
+     * @return if any win condition is met
+     */
     public boolean isGameOver()
     {
         
@@ -167,7 +172,7 @@ public class GameBoard implements IGameModel
       
         
       
-        //Check if all tiles are filled. If enough tiles are filled and noone has one, it returns true and draws
+        //Check if all tiles are filled. If enough tiles are filled and noone has won, it returns true and draws
         for (int i = 0; i<krydsOgBolle.length;i++)
         {
             for (int j = 0; j<krydsOgBolle.length;j++)
@@ -201,7 +206,9 @@ public class GameBoard implements IGameModel
         }
         return winner;
     }
-    
+    /**Draws a new board and sets player 0 as the current player
+     * 
+     */
     public void newGame()
     {
         for (int i = 0; i<krydsOgBolle.length;i++)
