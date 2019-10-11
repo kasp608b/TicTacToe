@@ -21,6 +21,9 @@ public class GameBoard implements IGameModel
     /**
      * Returns 0 for player 0, 1 for player 1.
      *
+     * 
+     * 
+     * 
      * @return int Id of the next player.
      */
     public int getNextPlayer()
